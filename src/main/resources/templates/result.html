@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+</head>
+<body>
+    <h2>Airbnb with <span data-th-text="${textSearch}"></span></h2>
+
+    <p data-th-if="${#lists.isEmpty(airbnbList)}"><span>No result found</span></p>
+
+    <ul data-th-unless="${#lists.isEmpty(airbnbList)}">
+        <li data-th-each="airbnb : ${airbnbList}">
+            <p data-th-text="${airbnb.name}"></p>
+            <p data-th-text="${airbnb.description}"></p>
+        </li>
+    </ul>
+
+    <a href="/">Back to Search</a>
+
+</body>
+</html>
